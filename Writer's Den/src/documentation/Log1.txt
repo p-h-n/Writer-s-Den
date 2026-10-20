@@ -1,6 +1,9 @@
-[LOG #1. 20/10/2026. ]
-This is the first entry in documentation of the creation of my personalized writing tool which I call the Writer's Den. So far I haven't been able to update the code, but I have left comments behind to get me on track and also give me direction on what to build next. 
-As I am writing this, I currently have a working JFrame with a working menu. However, two of the options in that menu--The New Project and Load Project buttons--are currently programmed to do nothing. the exit button is the only one that works.
-My next step at this point in time is to have the New Project and Load Project buttons working to perform their desired functions. This will involve a lot of file handling, as at the moment, this project is slated to work with basic text files and folders, with the sole exception of an .odt file.
-Once I get those functions working, then it might be an uphill battle to get the application looking precisely the way I want it.
-A goal with the interface is to have some parts of it inspired by the UI of Obsidian, particularly relating to the notes and outline. I think this would make the application a lot nicer to look at, but I will see how to implement when I get there.
+[LOG #1. 20/10/2026.]
+
+This is the first entry in the documentation of my personalised writing tool, which I call the Writer’s Den. I have not yet been able to update the code, but I have left comments in it to keep me on track and to indicate what I should build next.
+
+At the time of writing, I have a working JFrame with a functional menu. However, two of its options, New Project and Load Project, are currently programmed to do nothing. The Exit button is the only one that works.
+
+My next step is to make the New Project and Load Project buttons perform their intended functions. This will involve a significant amount of file handling, as the project is currently designed to work with basic text files and folders, with the sole exception of an .odt file.
+
+Once those functions are working, the greater challenge may be getting the application to look exactly the way I want. One of my goals for the interface is to draw inspiration from Obsidian’s UI, particularly for the notes and outline sections. I believe this would make the application more visually appealing, but I will decide how to implement it when I reach that stage.

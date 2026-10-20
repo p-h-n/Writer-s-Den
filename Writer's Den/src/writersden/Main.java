@@ -9,6 +9,8 @@ package writersden;
  * @author User
  */
 import javax.swing.*;
+import java.io.File;
+
 
 public class Main {
 
@@ -21,6 +23,7 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 800); //SETTING FRAME SIZE
         frame.setVisible(true); //DISPLAY FRAME
+       
     }
     
 }

@@ -18,6 +18,8 @@ public class MenuFrame extends JFrame {
     public MenuFrame() {
     super("Writer's Den");
     
+    ProjectManager pm = new ProjectManager();
+    
     //main enu
     JMenu menu = new JMenu("Menu");
     
@@ -36,6 +38,28 @@ public class MenuFrame extends JFrame {
         IF LOAD PROJECT IS SELECTED, PREVIOUSLY MADE FOLDERS WITH TITLES
         WITH ACTIVE SUBDIRECTORIES: OUTLINE AND TRANSCRIPT
     */
+    //EACH OF THE THREE MENU ITEMS HAS A UNIQUE ACTION THEY MUST LISTEN TO
+    
+    //NEW PROJECT ITEM TO ADD PROJECT TO PROJECTS FOLDER
+    newProject.addActionListener(
+    new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent event){
+            pm.addNewProject();//add directory with two subdirectories
+        }
+    });
+
+    //NEW FRAME WITH EXISTING PROJECTS
+    loadProject.addActionListener(
+    new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent event){
+            //Frame to show existing projects
+            ProjectFrame projectFrame = new ProjectFrame(pm);
+            projectFrame.setVisible(true);
+        }
+    });
+    
     
     //Exit
     JMenuItem exitItem = new JMenuItem("Exit");
@@ -57,4 +81,3 @@ public class MenuFrame extends JFrame {
 }   
 }  
     
-

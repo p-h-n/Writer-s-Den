@@ -46,7 +46,7 @@ public class ContentWindow extends JFrame {
             }
         });
         
-        Contents.setPreferredSize(new Dimension(600, 600));
+        //Contents.setPreferredSize(new Dimension(600, 600));
         
     }
     

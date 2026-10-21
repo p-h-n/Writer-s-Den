@@ -44,7 +44,7 @@ public class ProjectFrame extends JFrame {
                    String selectedProject = projectsList.getSelectedValue();
                    if(selectedProject != null){
                        ContentWindow contents = new ContentWindow();
-                       contents.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                       //contents.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                        contents.setSize(600, 600);
                         contents.setVisible(true);
                    }

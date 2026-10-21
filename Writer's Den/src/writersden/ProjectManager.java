@@ -40,9 +40,12 @@ public class ProjectManager {
     //CURRENT APP DIRECTORY
     public String path = System.getProperty("user.dir");
 
+
     public Path getProjectsDirectory() {
         return Paths.get(path, "Projects");
     }
+    
+    
 
     public List<String> listProjects() throws IOException {
         Path projectsDirectory = getProjectsDirectory();
@@ -90,5 +93,9 @@ public class ProjectManager {
         }catch (IOException e) {  
             System.err.println("IO Error: Failed to create directories. Reason: " + e.getMessage());  
         }
+    }
+    
+    public void openProject(){
+        
     }
 }

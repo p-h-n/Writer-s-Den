@@ -1,16 +1,25 @@
 [LOG #2. 20/10/2026. 19:18]
-I have gotten the Add and Load Project buttons on the menu working. 
-The Add Project button logic was easier to create than Load Project button. I created a single public void function called addNewProject(). I wanted this function to have the ability to prompt the user to enter the name of the project that they wanted to make. The name entered would become the name of the project directory, and create two subdirectories: Outline and Transcript.
-I used a JOptionPane to take in the name of the new project. I then created two path variables for the outline and transcript using a global string variable which held the directory of the project as a baseline. I created a try-catch block to ensure that everything worked as intended. to check if the outline and transcript directories existed and were made. Two exceptions were made for the file already existing or if the directory was not created. 
-The error lines that we set to be outputted weren't being outputted even though a new file has the same name. What is being observed though, is that no new file is made. There are no duplicates, but the user doesn't know that until they check the existing projects and nothing in the existing projects is removed.
-This will be looked at further in the future, but ultimately the project creation feature works. 
-The loadProject feature was a lot more challenging. The desired result needed to be either a new frame or menu showing the existing projects. It wasn't known how this feature would be implemented and I had not found any online information on how to create it. 
-I was aware that something akin to a for loop needed to scan through the names inside the Projects folder, take the strings of their names, give them buttons and display them. 
-I, at the time, just didn't know what functions and imports I needed. 
-To find that out, I decided to build a small skelton of what I believed I needed. I created the skeleton for a new frame, added the actionlistener for the load Projects, although it had nothing and created the skeleton for a loadProject function. I then asked GitHub Copilot what needed to be done to create the new frame that displayed the existing projects. 
-The output I got was a new function in ProjectsManager.java and a new file called ProjectFrame.java. 
-Inside the former, a new public Path function returned the paths inside of the Projects folder. There was also a new List method called listProjects() which threw an IOException. The function put the Projects directory into a path, checked if it existed, checked if it was a directory and returned a list of the files inside the Projects folder. 
-Inside the latter, a new JFrame class was made. It was given a header, and using a DefaultListModel. DLM and its contents are put into a JList. A try-catch block does something similar to a for loop by using forEach to do the same thing. Inside the JList, an element is added one by one into a List.
-There is also a check for if there are even projects in the frame, displaying a label of no projects found.
-The files work in conjunction with the rest of the code and after reviewing and studying it, I can say that, for now, it will do. 
-I worry that as this project continues, that online sources might start running out and so I will have to rely much more heavily on AI agents to explain to me what available tools, imports and functions are available to create the features that I want to create, provided my books and sources do not aid me.
+
+I have gotten the Add Project and Load Project buttons on the menu working.
+
+The Add Project logic was easier to create than the Load Project logic. I wrote a single public void method called addNewProject(), which prompts the user to enter a name for the new project. The name entered becomes the name of the project directory, and two subdirectories, Outline and Transcript, are created inside it.
+
+I used a JOptionPane to take in the project name. I then created two path variables for the Outline and Transcript directories, using a global string variable containing the project directory as a baseline. I wrapped the logic in a try-catch block to check whether the Outline and Transcript directories already existed and whether they were created successfully. Two exceptions were defined: one for when the directory already exists, and one for when the directory could not be created.
+
+However, the error messages I set up to be displayed are not appearing, even when a new project is given the same name as an existing one. What I have observed is that no new project is created, and no duplicates appear. The problem is that the user is not informed of this and can only discover it by checking the existing projects, none of which are removed or changed. I will investigate this further in the future, but for now the project creation feature works.
+
+The Load Project feature was considerably more challenging. The desired result was a new frame or menu displaying the existing projects. I did not know how to implement this, and I could not find any online information on how to create it.
+
+I understood that something akin to a for loop was needed to scan through the names inside the Projects folder, take the name strings, assign each a button and display them. I simply did not know which methods and imports I needed.
+
+To find out, I built a small skeleton of what I believed was required. I created the skeleton of a new frame, added an action listener for Load Project (although it contained no logic yet), and created the skeleton of a loadProject() method. I then asked GitHub Copilot what was needed to create a new frame that displays the existing projects.
+
+The output was a new method in ProjectsManager.java and a new file called ProjectFrame.java.
+
+In ProjectsManager.java, a new public Path method returns the path to the Projects folder. There is also a new listProjects() method, which returns a List and throws an IOException. This method places the Projects directory into a Path, checks that it exists and is a directory, and returns a list of the files inside the Projects folder.
+
+In ProjectFrame.java, a new JFrame class was created. It has a header and uses a DefaultListModel (DLM), whose contents are placed into a JList. A try-catch block then uses forEach to achieve something similar to a for loop, adding each project to the list one by one. The class also checks whether any projects exist and, if none are found, displays a “No projects found” label.
+
+These files work together with the rest of the code, and after reviewing and studying them, I can say that they will do for now.
+
+I am concerned that as this project progresses, online resources may begin to run out. I may therefore have to rely much more heavily on AI agents to explain which tools, imports and methods are available for the features I want to build, provided my books and other sources do not help.

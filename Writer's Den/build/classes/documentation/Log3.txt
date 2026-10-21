@@ -1,0 +1,17 @@
+LOG #3, 21/10/2026
+
+Following the successful implementation of the Load Project and New Project buttons, I have been drafting ideas and sketches for the project’s next stage and for how I would like the GUI to look.
+
+This led me to the concept of a Multiple Document Interface (MDI). An MDI consists of a main window, called the parent window, which contains other windows, called child windows. This allows several windows to be open at once so that documents can be worked on in parallel.
+
+I decided to implement an MDI to support navigating the project, taking notes, and writing the document/manuscript simultaneously. It also gave me the opportunity to explore a Java feature that my courses have not covered.
+
+Coding the JDesktopPane object and its features was not difficult. I only needed a skeleton with a button, and I plan to build everything else in incremental steps. Creating the skeleton was straightforward. The main challenge was opening it in response to an option being selected in the Project Frame, which requires each option to have an action listener.
+
+This proved difficult because of the forEach function. It successfully added an element for each project in the directory, but attaching an action listener inside it was unsuccessful. I then converted it into a for loop, which produced the same results, but I still could not find a working solution on Stack Overflow or other websites. However, I did learn about ListSelectionListener, an interface that reacts to changes in a list’s selection. I attempted to use it as described, but without success.
+
+I then asked GitHub Copilot how I could give each item in the list an action that opens the Desktop Pane object, which I named ContentsWindow. Its solution was to call the addListSelectionListener method on the JList named projectsList. It also suggested using a new method I haven't heard of, the getValueIsAdjusting() method. The getValueIsAdjusting() method prevents the listener from reacting multiple times while Swing is still updating the selection. It also created a String variable called selectedProject variable that holds the selected project’s name, and the Desktop Pane opens when the selected project exists.
+
+At the time of writing, the Add feature on the Desktop Pane has not yet been implemented. I will continue building and refining the MDI.
+
+I have also decided to include images in this documentation, showing the key files created and the implementations described in this log.
